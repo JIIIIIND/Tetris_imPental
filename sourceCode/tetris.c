@@ -48,7 +48,7 @@ void tetris_Print(tetris* t){
             && i < t -> posY + t -> current.height
             && t -> current.shape[i - t -> posY][j - t -> posX])
                 printf("■ ");
-            else if(t -> board[i][j])
+            else if(t -> board[i][j] == 1)
                 printf("■ ");
             else
                 printf("  ");
@@ -147,7 +147,9 @@ void remove_line(tetris* t, int line){
 
     // 위에 줄 한칸 아래로 내리기
     for(i = 0; i < line; i++){
-        t -> board[line - i] = t -> board[line - 1 - i];
+        for (int j = 0; j < t -> width; j++)
+            t -> board[line - i][j] = t -> board[line - 1 - i][j]; 
+        // t -> board[line - i] = t -> board[line - 1 - i];
     }
 
     // 맨 윗줄 0으로 초기화
