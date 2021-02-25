@@ -48,7 +48,7 @@ void tetris_Print(tetris* t){
             && i < t -> posY + t -> current.height
             && t -> current.shape[i - t -> posY][j - t -> posX])
                 printf("■ ");
-            else if(t -> board[i][j] == 1)
+            else if(t -> board[i][j])
                 printf("■ ");
             else
                 printf("  ");
