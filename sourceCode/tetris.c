@@ -149,7 +149,6 @@ void remove_line(tetris* t, int line){
     for(i = 0; i < line; i++){
         for (int j = 0; j < t -> width; j++)
             t -> board[line - i][j] = t -> board[line - 1 - i][j]; 
-        // t -> board[line - i] = t -> board[line - 1 - i];
     }
 
     // 맨 윗줄 0으로 초기화
